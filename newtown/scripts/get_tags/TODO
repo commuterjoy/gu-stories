@@ -1,0 +1,25 @@
+
+1.
+
+- Cache a list of 'world/newtown-shooting' content objects from the API
+- Import in to a local mongo
+- Hook up Play application
+
+2. 
+
+- Start to adapt the data / UX (maintained as a set of patches??)
+
+3.
+
+- Meta-data layer
+
+4.
+
+- Collect some data / KPIs around what people are doing
+	- 'read'
+	- more on
+	- tag pages
+	- popular articles/stories - referrers
+
+- List problems / KPIs we are solving
+
