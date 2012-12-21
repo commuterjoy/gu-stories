@@ -9,7 +9,7 @@ case class Resource(contentApi: com.gu.openplatform.contentapi.model.Content, en
 
 object Export {
 
-  val ner = new NamedEntityService
+  val ner = new NamedEntityService("english.conll.4class.distsim.crf.ser.gz")
 
   // merges Content API + NER term extraction
   private def export(tag: String): List[(String, String)] = {

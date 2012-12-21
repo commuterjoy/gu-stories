@@ -24,10 +24,13 @@ case class Person(val text : String, var frequency : Int = 0) extends NamedEntit
 case class Location(val text : String, var frequency : Int = 0) extends NamedEntity {
   override val entity = "Location"
 }
+case class Misc(val text : String, var frequency : Int = 0) extends NamedEntity {
+  override val entity = "Misc"
+}
 
-class NamedEntityService {
+class NamedEntityService(dictionary: String = "english.all.3class.distsim.crf.ser.gz") {
 
-  val classifier = CRFClassifier.getClassifierNoExceptions("all.3class.distsim.crf.ser.gz")
+  val classifier = CRFClassifier.getClassifierNoExceptions(dictionary)
 
   def classify(text : String) : List[NamedEntity] = {
 
@@ -45,6 +48,7 @@ class NamedEntityService {
             case "ORGANIZATION" => addNamedEntity(entities, new Organization(getNamedEntityForAnnotation(tokens, "ORGANIZATION")))
             case "LOCATION"     => addNamedEntity(entities, new Location(getNamedEntityForAnnotation(tokens, "LOCATION")))
             case "PERSON"       => addNamedEntity(entities, new Person(getNamedEntityForAnnotation(tokens, "PERSON")))
+            case "MISC"         => addNamedEntity(entities, new Misc(getNamedEntityForAnnotation(tokens, "MISC")))
             case _              => tokens.next
           }
 
