@@ -1,28 +1,34 @@
 
-import util.ContentApi
+import util._
 import org.apache.commons.io._
 import com.codahale.jerkson.Json._
 import dispatch._
+import org.jsoup._
+
+case class Resource(contentApi: com.gu.openplatform.contentapi.model.Content, entities: List[util.NamedEntity])
 
 object Tags {
 
-  // exports Content API responses to the file system as JSON
+  val ner = new NamedEntityService
+
+  // merges Content API + NER term extraction
   private def export(tag: String): List[(String, String)] = {
     ContentApi.
       all(tag).map({ response =>
-        var responseAsJson = generate(response) // http://java.dzone.com/articles/processing-json-scala-jerkson
-        (response.id, responseAsJson)
+        val body = response.fields.getOrElse("body", "")
+        val bodyRaw = Jsoup.parse(body.toString).text();
+        val entities = ner.classify(bodyRaw)
+        val resource = new Resource(response, entities)
+        val resourceAsJson = generate(resource) // http://java.dzone.com/articles/processing-json-scala-jerkson
+        (response.id, resourceAsJson)
     })
   }
 
+  // exports Content API response to the file system as JSON
   def exportToFileSystem(tag: String, base: String) = {
-
-    println(tag)
-
-    export(tag).foreach{ case (id, json) => {
-      println(id)
+    export(tag).foreach{ case (id, response) => {
       val filePath = base + id
-      FileUtils.writeStringToFile(new java.io.File(filePath), json, "utf8", true)
+      FileUtils.writeStringToFile(new java.io.File(filePath), response, "utf8", true)
       }
     }
   }
@@ -52,8 +58,6 @@ object Tags {
 
     val tag = args.first
     val outputBase = "target/" + tag + "/"
-
-    println(outputBase)
 
     //Tags.exportToElasticSearch(tag)
     Tags.exportToFileSystem(tag, outputBase)
