@@ -5,15 +5,15 @@ import com.gu.openplatform.contentapi.connection.{ JavaNetHttp }
 
 class ContentApiClient extends Api with JavaNetHttp {
 
+  val maxPages = 10
   apiKey = Some(System.getenv("ContentApiKey"))
 
   override protected def fetch(url: String, parameters: Map[String, Any]) = {
     super.fetch(url, parameters + ("user-tier" -> "internal"))
   }
 
-  // tail recursion : http://oldfashionedsoftware.com/2008/09/27/tail-recursion-basics-in-scala/
+  // Nb. http://oldfashionedsoftware.com/2008/09/27/tail-recursion-basics-in-scala/
   def all(tag: String, page: Int = 1, items: List[com.gu.openplatform.contentapi.model.Content] = Nil): List[com.gu.openplatform.contentapi.model.Content] = {
-    val maxPages = 10
     val search = super.
       search.
       page(page).
