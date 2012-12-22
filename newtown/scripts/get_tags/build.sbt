@@ -15,6 +15,7 @@ libraryDependencies ++= Seq(
   "org.slf4j" % "slf4j-simple" % "1.6.2",
   "commons-io" % "commons-io" % "2.3",
   "com.codahale" % "jerkson_2.9.1" % "0.5.0",
-  "org.jsoup" % "jsoup" % "1.6.1"
+  "org.jsoup" % "jsoup" % "1.6.1",
+  "org.scalatest" %% "scalatest" % "1.6.1" % "test"
   )
 
