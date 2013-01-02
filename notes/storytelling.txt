@@ -1,0 +1,68 @@
+% Storytelling 
+% December, 2012 
+
+# Problem
+
+We publish articles to the web in the same way that we publish to the
+newspaper.  With the exception of live blogs, they are not native to
+the web or take advantage of the capabilities that web technologies provide.
+
+But where to start?
+
+Probably from two angles - domain modelling, and UX prototypes.
+
+## Representing stories
+
+- We don't have a domain model for news events and stories, we've just borrowed one
+  from a newspaper metaphor ('article', 'frontpage' etc.)
+- So, we should write a domain model that represents the content we produce.
+- We need to validate the work with the subject area experts - I.e, journalists, editors etc.
+- The model should contain other actors involved in the story - places, 
+  people, organisations etc.
+- Because 'the news' is quite abstract we will probably end up with a few different models
+  to experiement with.
+- There's a bit of prior art here - BBC, NYTimes, ITV News, flexible content, schema.org
+- We should not try to document all domains. Food, money, travel etc. are represented
+  differently to news.
+
+## Prototypes
+
+- To date we've published *68* articles tagged with 'newtown-shooting' (in about 4 days).
+- I think it's best to take a medium sized story like this, pull it apart, and build some
+  prototypes around it.
+- We should have in mind what KPIs we want to improve.
+- The prototypes should recognise the evolving nature of the story.
+- We should look at the stat's, popularity of certain URLs, think about the validity of
+  each tag, talk to the people who wrote it etc.
+- We should think what different audience segments want to know about the story.
+- Nb. There are other types of story to consider - Eg, 'The saga of the Lib/Con coalition', 
+  so we should not ignore these.
+
+## Tools
+
+- We are moving from a world of tags to graphs of information so it would be useful to
+  explore the workflow & technical implications this during Q4.
+- Built in to the prototypes should be an idea of how someone might curate/edit/create
+  the information required to power the site, be that Flexible Content or otherwise.
+- We should evaluate need for hand-cranked tags in the context of having a domain model.
+
+## Overlap with personalisation/data work
+
+- The 'intelligence' behind the data work is about spotting usage patterns from URLs
+  being visited.
+- The clearer our understanding about the URLs being viewed, the better the
+  intelligence. Tags tell us a bit, but not much. The domain model should increase 
+  the _system's_ understanding of our content.
+- With the audience segments we can also expose different parts of the domain to
+  different types of people, Eg. people with detailed understanding of a story Vs. people
+  who are new to the story.
+
+## External facing
+
+- With a domain that describes events we can interlink with other organisations easily.
+- Eg, if BBC and Guardian used the same events to describe their content it would be
+  trivial for each other to aggregate relevant links, content etc.
+- Eg, Google News - I think there's some advantages to be gained from talking to 
+  them about our model of news events - I.e. being more helpful to our largest referer, and 
+  Gingras is mad for this stuff, and leading the inveitable move from tags to
+  semantics.
