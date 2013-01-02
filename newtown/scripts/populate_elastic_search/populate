@@ -1,0 +1,40 @@
+
+require 'rubygems'
+require 'httparty'
+require 'json'
+require 'digest/md5'
+
+host = 'http://127.0.0.1:5984/'
+resources = Dir.glob("world/**/*").reject {|fn| File.directory?(fn) }
+
+def create_database(db, host)
+	response = HTTParty.put(host + db)
+end
+
+def populate(resources, db, host)
+	resources.each { |resource|
+		article = IO.read(resource)
+		key = Digest::MD5.hexdigest(resource)
+		js = JSON.parse(article)
+
+		puts [resource, key, article].join(" ")
+		
+		# fix the incoming json so everything is nested under 'contentApi' node
+		js['contentApi']['entities'] = js['entities'] 
+		js['contentApi']['sentences'] = js['sentances'] 
+
+		response = HTTParty.put(host + db + '/' + key,
+			       :body => js['contentApi'].to_json,
+			       :headers => {'accept' => 'application/json', 'content-type' => 'application/json'},
+			       :timeout => 2
+			       )
+
+		puts [response.code, resource, key].join(" ")
+	}
+end
+
+# ----
+
+create_database('articles', host)
+populate(resources, 'articles', host)
+

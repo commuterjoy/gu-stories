@@ -1,0 +1,47 @@
+
+require 'rubygems'
+require 'httparty'
+require 'json'
+
+events = ['Newtown Shootings']
+places = ['Sandy Hook', 'Newtown', 'Connecticut', 'United States']
+
+def create_node(data)
+	response = HTTParty.post('http://localhost:7474/db/data/node', 
+			:body => data.to_json, 
+			:headers => {'accept' => 'application/json', 'content-type' => 'application/json' })
+	response['self']
+end
+
+def create_relationship(node, data)
+	response = HTTParty.post(node + '/relationships', 
+			:body => data.to_json, 
+			:headers => {'accept' => 'application/json', 'content-type' => 'application/json' })
+	response
+end
+
+last = nil
+places.each do |place|
+	node = create_node({ :name => place })
+	if last
+ 		puts create_relationship(node, { 'to' => last, 'type' => 'BELONGS' })
+	end
+	last = node
+end
+
+#response.headers.inspect
+#places.each do |place|
+
+#response = HTTParty.get('http://twitter.com/statuses/public_timeline.json')
+
+#ARGS="-i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json'"
+
+# Events
+#curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -d '{ "name": "Newtown Shootings" }' http://localhost:7474/db/data/node
+
+# Places
+#curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -d '{ "name": "Sandy Hook" }' http://localhost:7474/db/data/node
+#curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -d '{ "name": "Newtown", "WGS84": "41.398333, -73.293056" }' http://localhost:7474/db/data/node
+#curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -d '{ "name": "Connecticut" }' http://localhost:7474/db/data/node
+#curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -d '{ "name": "United States" }' http://localhost:7474/db/data/node
+
