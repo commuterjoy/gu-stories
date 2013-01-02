@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  article
+    p.note
+    each doc in documents
+      p.byline
+        small= doc.contentApi.fields.byline + ', ' + new Date(doc.contentApi.webPublicationDate)
+      h2= doc.contentApi.fields.headline
+      each p, i in doc.sentances.slice(0,3)
+        p= p
+        - if (i === 2)
+          p
+            a(href="#") Read more... 
+      - if (doc.contentApi.mediaAssets[0] && doc.contentApi.mediaAssets[0].type == 'video')
+        video(poster=doc.contentApi.mediaAssets[0].fields.stillImageUrl, controls)
+          source(src=doc.contentApi.mediaAssets[0].file)

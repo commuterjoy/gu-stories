@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  article
+    each doc in documents
+      each foo, k in doc
+        h2.note.hey= k
+          small
+            a(href="#")= ' (' + foo.length + ' articles)'
+        each bar, i in foo.slice(0,2)
+          p.byline
+            small= bar.contentApi.fields.byline + ', ' + new Date(bar.contentApi.webPublicationDate)
+          h2= bar.contentApi.fields.headline
+          each p, i in bar.sentances.slice(0,2)
+            p= p
+            - if (i === 1)
+              p
+                a(href="#") Read more... 
+            - if (bar.contentApi.mediaAssets[0] && bar.contentApi.mediaAssets[0].type == 'video')
+              video(poster=bar.contentApi.mediaAssets[0].fields.stillImageUrl, controls)
+                source(src=bar.contentApi.mediaAssets[0].file)
+

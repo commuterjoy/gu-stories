@@ -1,0 +1,91 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather:900);
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+p,
+li {
+  line-height: 170%;
+}
+a {
+  color: #20C;
+}
+h1,
+h2,
+nav a {
+  font-family: 'Merriweather', serif;
+}
+h1,
+h2,
+h3 {
+  line-height: 140%;
+}
+nav a {
+  font-size: 14px;
+  margin-right: 18px;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+article {
+  max-width: 600px;
+  margin: 0 auto;
+}
+article img {
+  display: block;
+  width: 100%;
+  margin: 12px 0;
+}
+.note {
+  border-top: 1px solid #999;
+  padding: 12px;
+  margin: 12px -12px;
+}
+/** logo */
+#logo {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: 120px;
+}
+/** timeline */
+#timeline {
+  max-width: 600px;
+  position: fixed;
+  top: 150px;
+  left: 50%;
+  margin-left: -480px;
+  text-align: right;
+}
+#timeline ul {
+  max-width: 160px;
+}
+.note.date {
+  text-align: right;
+  font-size: x-small;
+  padding: 6px;
+}
+h3 {
+  color: #666;
+}
+.filter li {
+  float: left;
+  margin-right: 1em;
+}
+.byline {
+  color: #666;
+  margin-bottom: 0;
+}
+.byline + h2 {
+  margin-top: 0px;
+}
+.hey {
+  color: #999;
+}

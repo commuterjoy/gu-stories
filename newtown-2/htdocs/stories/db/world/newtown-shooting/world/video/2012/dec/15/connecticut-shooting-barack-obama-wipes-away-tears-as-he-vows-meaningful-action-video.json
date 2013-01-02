@@ -1,0 +1,210 @@
+{
+  "contentApi" : {
+    "id" : "world/video/2012/dec/15/connecticut-shooting-barack-obama-wipes-away-tears-as-he-vows-meaningful-action-video",
+    "sectionId" : "world",
+    "sectionName" : "World news",
+    "webPublicationDate" : 1355545380000,
+    "webTitle" : "Connecticut shooting: Barack Obama holds back tears as he vows 'meaningful' action – video",
+    "webUrl" : "http://www.guardian.co.uk/world/video/2012/dec/15/connecticut-shooting-barack-obama-wipes-away-tears-as-he-vows-meaningful-action-video",
+    "apiUrl" : "http://content.guardianapis.com/world/video/2012/dec/15/connecticut-shooting-barack-obama-wipes-away-tears-as-he-vows-meaningful-action-video",
+    "fields" : {
+      "trailText" : "<p>In the wake of the Sandy Hook elementary school massacre, the US president gave an emotional speech, pausing at times to maintain his composure as he sent condolences to the families of the victims and their community</p>",
+      "headline" : "Connecticut shooting: Barack Obama holds back tears as he vows 'meaningful' action – video",
+      "showInRelatedContent" : "true",
+      "lastModified" : "2012-12-18T11:52:02Z",
+      "hasStoryPackage" : "true",
+      "score" : "1.0",
+      "secureThumbnail" : "https://static-secure.guim.co.uk/sys-images/Guardian/Pix/audio/video/2012/12/15/1355544263725/Barack-Obama-Connecticut--004.jpg",
+      "standfirst" : "In the wake of the Sandy Hook elementary school massacre, the US president gave an emotional speech, pausing at times to maintain his composure as he sent condolences to the families of the victims and their community",
+      "shortUrl" : "http://gu.com/p/3ch5q",
+      "thumbnail" : "http://static.guim.co.uk/sys-images/Guardian/Pix/audio/video/2012/12/15/1355544263725/Barack-Obama-Connecticut--004.jpg",
+      "commentable" : "false",
+      "internalContentCode" : "401115992",
+      "internalOctopusCode" : "7029662",
+      "isPremoderated" : "false",
+      "publication" : "guardian.co.uk",
+      "internalPageCode" : "1843073",
+      "shouldHideAdverts" : "true",
+      "liveBloggingNow" : "false",
+      "commentCloseDate" : "2012-12-18T04:23:04Z"
+    },
+    "tags" : [
+      {
+        "id" : "world/gun-crime",
+        "type" : "keyword",
+        "sectionId" : "world",
+        "sectionName" : "World news",
+        "webTitle" : "Gun crime",
+        "webUrl" : "http://www.guardian.co.uk/world/gun-crime",
+        "apiUrl" : "http://content.guardianapis.com/world/gun-crime",
+        "references" : [
+          
+        ]
+      },
+      {
+        "id" : "world/newtown-shooting",
+        "type" : "keyword",
+        "sectionId" : "world",
+        "sectionName" : "World news",
+        "webTitle" : "Newtown shooting",
+        "webUrl" : "http://www.guardian.co.uk/world/newtown-shooting",
+        "apiUrl" : "http://content.guardianapis.com/world/newtown-shooting",
+        "references" : [
+          
+        ]
+      },
+      {
+        "id" : "world/gun-control",
+        "type" : "keyword",
+        "sectionId" : "world",
+        "sectionName" : "World news",
+        "webTitle" : "US gun control",
+        "webUrl" : "http://www.guardian.co.uk/world/gun-control",
+        "apiUrl" : "http://content.guardianapis.com/world/gun-control",
+        "references" : [
+          
+        ]
+      },
+      {
+        "id" : "world/barack-obama",
+        "type" : "keyword",
+        "sectionId" : "world",
+        "sectionName" : "World news",
+        "webTitle" : "Barack Obama",
+        "webUrl" : "http://www.guardian.co.uk/world/barack-obama",
+        "apiUrl" : "http://content.guardianapis.com/world/barack-obama",
+        "references" : [
+          
+        ]
+      },
+      {
+        "id" : "world/usa",
+        "type" : "keyword",
+        "sectionId" : "world",
+        "sectionName" : "World news",
+        "webTitle" : "United States",
+        "webUrl" : "http://www.guardian.co.uk/world/usa",
+        "apiUrl" : "http://content.guardianapis.com/world/usa",
+        "references" : [
+          
+        ]
+      },
+      {
+        "id" : "world/world",
+        "type" : "keyword",
+        "sectionId" : "world",
+        "sectionName" : "World news",
+        "webTitle" : "World news",
+        "webUrl" : "http://www.guardian.co.uk/world/world",
+        "apiUrl" : "http://content.guardianapis.com/world/world",
+        "references" : [
+          
+        ]
+      },
+      {
+        "id" : "world/connecticut",
+        "type" : "keyword",
+        "sectionId" : "world",
+        "sectionName" : "World news",
+        "webTitle" : "Connecticut",
+        "webUrl" : "http://www.guardian.co.uk/world/connecticut",
+        "apiUrl" : "http://content.guardianapis.com/world/connecticut",
+        "references" : [
+          
+        ]
+      },
+      {
+        "id" : "tone/news",
+        "type" : "tone",
+        "webTitle" : "News",
+        "webUrl" : "http://www.guardian.co.uk/tone/news",
+        "apiUrl" : "http://content.guardianapis.com/tone/news",
+        "references" : [
+          
+        ]
+      },
+      {
+        "id" : "type/video",
+        "type" : "type",
+        "webTitle" : "Video",
+        "webUrl" : "http://www.guardian.co.uk/video",
+        "apiUrl" : "http://content.guardianapis.com/video",
+        "references" : [
+          
+        ]
+      }
+    ],
+    "factboxes" : [
+      
+    ],
+    "mediaAssets" : [
+      {
+        "type" : "video",
+        "rel" : "body",
+        "index" : 1,
+        "file" : "http://cdn.theguardian.tv/brightcove/2012/12/15/obamaconnecticut-16x9.mp4",
+        "fields" : {
+          "source" : "Reuters",
+          "embeddable" : "false",
+          "blockAds" : "true",
+          "height" : "360",
+          "thumbnail" : "http://cdn.theguardian.tv/brightcove/thumb/2012/12/15/obamaconnecticut_7029662.jpg",
+          "durationMinutes" : "4",
+          "stillImageUrl" : "http://cdn.theguardian.tv/brightcove/poster/2012/12/15/obamaconnecticut_7029662.jpg",
+          "width" : "480",
+          "durationSeconds" : "1"
+        },
+        "encodings" : [
+          {
+            "format" : "video/mp4:720",
+            "file" : "http://cdn.theguardian.tv/connectedTV/1280/2012/12/15/obamaconnecticut-720.mp4"
+          },
+          {
+            "format" : "video/3gpp:small",
+            "file" : "http://cdn.theguardian.tv/3gp/small/2012/12/15/obamaconnecticut_3gpSml16x9.3gp"
+          },
+          {
+            "format" : "video/m3u8",
+            "file" : "http://cdn.theguardian.tv/ad/obamaconnecticut/obamaconnecticut.m3u8"
+          },
+          {
+            "format" : "video/3gpp:large",
+            "file" : "http://cdn.theguardian.tv/3gp/large/2012/12/15/obamaconnecticut_3gpLg16x9.3gp"
+          },
+          {
+            "format" : "video/mp4",
+            "file" : "http://cdn.theguardian.tv/brightcove/2012/12/15/obamaconnecticut-16x9.mp4"
+          }
+        ]
+      }
+    ],
+    "references" : [
+      
+    ]
+  },
+  "entities" : [
+    {
+      "text" : "Sandy Hook",
+      "frequency" : 2,
+      "entity" : "Person"
+    },
+    {
+      "text" : "US",
+      "frequency" : 2,
+      "entity" : "Location"
+    },
+    {
+      "text" : "Barack Obama",
+      "frequency" : 1,
+      "entity" : "Person"
+    },
+    {
+      "text" : "Connecticut",
+      "frequency" : 1,
+      "entity" : "Location"
+    }
+  ],
+  "sentances" : [
+    "In the wake of the Sandy Hook elementary school massacre, the US president gave an emotional speech, pausing at times to maintain his composure as he sent condolences to the families of the victims and their community"
+  ]
+}

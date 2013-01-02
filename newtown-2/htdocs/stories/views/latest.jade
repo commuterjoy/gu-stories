@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  article
+    each doc in documents
+      h2.note= doc.contentApi.fields.headline
+      each p, i in doc.sentances.slice(0,3)
+        p= p
+        - if (i === 2)
+          p
+            a(href='http://guardian.co.uk/' + doc.contentApi.id) Read more... 
+      - if (doc.contentApi.mediaAssets[0] && doc.contentApi.mediaAssets[0].type == 'video')
+        video(poster=doc.contentApi.mediaAssets[0].fields.stillImageUrl, controls)
+          source(src=doc.contentApi.mediaAssets[0].file)

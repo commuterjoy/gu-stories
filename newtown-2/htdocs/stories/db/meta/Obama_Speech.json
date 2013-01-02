@@ -1,0 +1,33 @@
+{
+  "id" : "Obama_Speech",
+  "documents" : [
+    "world/2012/dec/14/obama-meaningful-action-newtown-shooting",
+    "world/video/2012/dec/15/connecticut-shooting-barack-obama-wipes-away-tears-as-he-vows-meaningful-action-video",
+    "world/2012/dec/14/obama-statement-shooting-newtown-connecticut-text"
+  ],
+  "occurance" : "14 Dec 2012",
+  "parent" : [
+    "Newtown_Shootings"
+  ],
+  "tags" : [
+    "world/newtown"
+  ],
+  "Location" : "Newtown, Connecticut, United States",
+  "title" : "President Obama reacts",
+  "Injured" : 2,
+  "Perpetrator" : "Adam Peter Lanza",
+  "Wikipedia" : "Sandy_Hook_Elementary_School_shooting",
+  "contentApi" : {
+    "tags" : [
+      
+    ]
+  },
+  "Date" : "December 14, 2012 c. 9:35 a.m. – c. 9:49 a.m. (EST)",
+  "Deaths" : 28,
+  "events" : [
+    "Sandy_Hook_Shootings",
+    "Obama_Speech",
+    "Memorial",
+    "NRA"
+  ]
+}

@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  article
+    p.note
+      em This page explains what we know so far. 
+    each p in meta.background
+      p= p
+    - if (meta.facts.Geo) 
+      h3 Where
+        img(src="http://maps.google.com/maps/api/staticmap?center="+ meta.facts.Geo +"&zoom=8&size=600x600&maptype=roadmap&sensor=false&markers=size:small|color:yellow|label:a|" + meta.facts.Geo)
+    h3 Facts
+    each fact, key in meta.facts
+      p= key + ': ' + fact
+    h3 Entities
+    p A list of extracted entities from the documents... 
+      a(href='/events/' + meta.id + '/people?quantity=15') People
+      span , 
+      a(href='/events/' + meta.id + '/places?quantity=7') Places
+      span , 
+      a(href='/events/' + meta.id + '/organisations?quantity=15') Organisations

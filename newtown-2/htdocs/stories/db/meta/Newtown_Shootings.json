@@ -1,0 +1,92 @@
+{
+  "id" : "Newtown_Shootings",
+  "title" : "Newtown Shootings",
+  "events" : [
+    "Sandy_Hook_Shootings",
+    "Obama_Speech",
+    "Memorial",
+    "NRA"
+  ],
+  "documents" : [
+    
+  ],
+  "analysis" : [
+    {
+      "title" : "Gun control",
+      "documents" : [
+        "commentisfree/2012/dec/15/newtown-shooting-tighter-gun-control-laws",
+        "commentisfree/2012/dec/14/newtown-school-shootings-gun-control",
+        "world/2012/dec/15/newtown-school-shootings-gun-control",
+        "commentisfree/2012/dec/15/connecticut-shooting-tom-mauser",
+        "commentisfree/2012/dec/16/newtown-americans-resist-obama-gun-laws",
+        "world/2012/dec/16/obama-gun-control-pressure-newtown",
+        "world/2012/dec/16/newtown-shooting-ranges-gun-control",
+        "commentisfree/2012/dec/16/americans-gun-control-newtown-editorial",
+        "world/2012/dec/16/obama-gun-control-record-failure",
+        "world/2012/dec/16/obama-gun-control-newtown-assault",
+        "commentisfree/2012/dec/17/newtown-shooting-helpless-charlie-brooker",
+        "world/2012/dec/17/new-york-mayor-michael-bloomberg-gun-control",
+        "world/2012/dec/17/gun-control-newtown-shootings-congress",
+        "world/2012/dec/17/white-house-obama-gun-control-newtown"
+      ]
+    },
+    {
+      "title" : "Obama on Gun control",
+      "documents" : [
+        "world/2012/dec/17/obama-newtown-speech-gun-control",
+        "world/us-news-blog/2012/dec/16/newtown-school-shooting-sunday-talkshows-live",
+        "world/video/2012/dec/17/barack-obama-addresses-newtown-families-video"
+      ]
+    },
+    {
+      "title" : "Mental Health",
+      "documents" : [
+        "commentisfree/2012/dec/17/newtown-shootings-education-prevent-mass-killings",
+        "commentisfree/2012/dec/15/gun-control-sandy-hook-newtown"
+      ]
+    },
+    {
+      "title" : "Media",
+      "documents" : [
+        "world/2012/dec/15/newtown-shootings",
+        "science/the-lay-scientist/2012/dec/17/newtown-mental-health-psychology",
+        "commentisfree/2012/dec/17/npr-andy-carvin-overreach-newtown"
+      ]
+    }
+  ],
+  "reaction" : [
+    "world/2012/dec/15/dawn-hochsprung-sandy-hook-elementary",
+    "world/2012/dec/15/mary-sherlach-psychologist-sandy-hook",
+    "world/2012/dec/15/sandy-hook-teacher-victoria-soto",
+    "world/video/2012/dec/15/newtown-react-school-shootings-video",
+    "world/2012/dec/16/father-newtown-victim-love-support",
+    "world/2012/dec/16/sandy-hook-victims-remembered-words",
+    "world/2012/dec/16/adam-lanza-quiet-friendless-boy",
+    "media/greenslade/2012/dec/17/newtown-shooting-newspapers",
+    "science/blog/2012/dec/17/adam-lanza-medicalisation-evil",
+    "world/2012/dec/17/newtown-survivors-routine-order-dunblane",
+    "commentisfree/2012/dec/17/us-killings-tragedies-pakistan-bug-splats",
+    "world/2012/dec/17/mental-block-gun-control-usa"
+  ],
+  "facts" : {
+    "Geo" : "41.398333,-73.293056",
+    "Location" : "Newtown, Connecticut, United States",
+    "Date" : "December 14, 2012 c. 9:35 a.m. – c. 9:49 a.m. (EST)",
+    "Deaths" : 28,
+    "Injured" : 2,
+    "Perpetrator" : "Adam Peter Lanza",
+    "Wikipedia" : "Sandy_Hook_Elementary_School_shooting"
+  },
+  "tags" : [
+    "world/newtown"
+  ],
+  "background" : [
+    "As of November 30, 2012, Sandy Hook Elementary School had 456 children enrolled in kindergarten through fourth grade. According to school authorities, the school's security protocol had recently been upgraded, requiring visitors to be individually admitted after visual and identification review by video monitor. The doors to the school were locked at 9:30 a.m. each day, after morning arrivals.",
+    "Newtown is located in Fairfield County, Connecticut, about 60 miles outside New York City. Violent crime had been rare in the town of 28,000 residents; there was only one homicide in the town in the ten years prior to the school shooting."
+  ],
+  "contentApi" : {
+    "tags" : [
+      
+    ]
+  }
+}

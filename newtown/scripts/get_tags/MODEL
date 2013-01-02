@@ -1,0 +1,28 @@
+Place
+-----
+
+Newtown Shootings
+	happened in Newtown
+	sameAs: http://www.bbc.co.uk/news/world-us-canada-20754142
+
+Newtown
+	is in Conneticut
+	has lat/lon of x,c
+	is sameAs wikipedia/geonames
+
+Conneticut
+	is a state
+	is in USA
+	elected Democractic
+
+USA
+
+Queries
+-------
+
+- Where did this happen?
+- What happened
+- Why
+- What do left/right wingers have to say about this?
+- What do commentators say about this?
+

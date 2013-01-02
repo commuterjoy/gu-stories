@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  article
+    p.note
+    ol
+      each result in results
+        li
+          p.byline
+            small= new Date(result.contentApi.webPublicationDate)
+          h2= result.contentApi.fields.headline
+          p= result.contentApi.fields.standfirst
+          ul
+            each picture in result.contentApi.mediaAssets
+              li
+                img(src=picture.file)
+                span.caption
+                  span= picture.fields.caption
+                  span= picture.fields.credit

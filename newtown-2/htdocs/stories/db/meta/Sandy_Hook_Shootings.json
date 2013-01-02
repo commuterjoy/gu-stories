@@ -1,0 +1,25 @@
+{
+  "id" : "Sandy_Hook_Shootings",
+  "title" : "Shootings",
+  "parent" : [
+    "Newtown_Shootings"
+  ],
+  "occurance" : "14 Dec 2012",
+  "events" : [
+    "Sandy_Hook_Shootings",
+    "Obama_Speech",
+    "Memorial",
+    "NRA"
+  ],
+  "documents" : [
+    
+  ],
+  "tags" : [
+    "world/newtown"
+  ],
+  "contentApi" : {
+    "tags" : [
+      
+    ]
+  }
+}

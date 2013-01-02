@@ -1,0 +1,35 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='http://code.jquery.com/jquery-latest.js', async='true')
+    script(src='/bootstrap/js/bootstrap.min.js', async='true')
+  body
+    img#logo(src="http://static.guim.co.uk/static/216b5cd5f71fa77eab98f6851420ab887883612e/common/images/logos/the-guardian/titlepiece.gif")
+    div#timeline
+      h2 Timeline
+      ul
+        each e in events
+          li
+            div 
+              a(href="/events/" + e.id + "/latest")= e.title
+            small= e.occurance
+    article
+      div.parent
+        - if (meta.parent)
+          p
+            span « part of the 
+            a(href="/events/" + meta.parent + "/latest")= meta.parent
+            span= ' event'
+      h1= meta.title
+      - if (!meta.parent)
+        nav
+          a(href="background") Background
+          a(href="latest") Latest
+          a(href="pictures") Pictures 
+          a(href="analysis") Analysis
+          a(href="reaction") Reaction
+      block content
