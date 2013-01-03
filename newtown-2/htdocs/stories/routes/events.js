@@ -2,146 +2,61 @@
 var fs = require('fs')
   , event = require('../models/events');
 
-exports.list = function(req, res){
-  res.render('events', {})
+exports.readme = function (req, res) {
+	var readme = fs.readFileSync('README.md');
+	res.set('Content-Type', 'text/html');
+	res.send(200, readme);
 };
 
-exports.readme = function(req, res){
-  var readme = fs.readFileSync('README.md');
-  res.set('Content-Type', 'text/html');
-  res.send(200, readme);
-};
-
-exports.get = function(req, res){
-  res.render('event', {})
-};
-
-function expand_meta_events(meta) {
-	return meta.events.map(function(event_id){
-		return JSON.parse(fs.readFileSync('db/meta/' + event_id + '.json'));
-	})
-}
-
-function things(req, res, thing) {
-  var finder = require('findit').find("db/world")
-    , results = []
-    , meta = JSON.parse(fs.readFileSync('db/meta/' + req.params.id + '.json'))
-    , meta_events = expand_meta_events(meta)
-    , quantity = req.query.quantity || 10;	
-
-  finder.on('file', function (file, stat) {
-	
-	var article = JSON.parse(fs.readFileSync(file))
-	  , people = article.entities.map(function(item) {
-		return item;
-	}).filter(function (item) {
-		//return (item.entity === 'Person' && (item.text.indexOf(' ') >= 0))
-		//return (item.entity === 'Location')
-		//return (item.entity === 'Organisation')
-		return (item.entity === thing)
+exports.people = function (req, res) {
+	var meta = new event().meta(req.params.id)
+	  , people = new event().things(req.params.id, 'Person', req.query.quantity, function(t) {
+		res.render('people', {  "people": t, "events": meta.expanded, "meta": meta.info, "quantity": req.query.quantity });
 	});
+}
 
-	results.push(people)
-  });
-  
-  finder.on('end', function () {
-
-	var frequency = {};
-
-	results.forEach(function (result) {
-		result.forEach(function(entity) {
-			if (frequency[entity.text])
-				frequency[entity.text] = frequency[entity.text] + entity.frequency;
-			else
-				frequency[entity.text] = entity.frequency;
-		})
+exports.orgs = function (req, res){
+	var meta = new event().meta(req.params.id)
+	  , orgs = new event().things(req.params.id, 'Organisation', req.query.quantity, function(t) {
+		res.render('people', {  "people": t, "events": meta.expanded, "meta": meta.info, "quantity": req.query.quantity });
 	});
-
-	var sortable = [];
-	for (var f in frequency)
-		sortable.push([f, frequency[f]])
-	var sorted = sortable.sort(function(a, b) {return b[1] - a[1]})
-		
-	res.render('people', { "title": "People", "people": sorted, "meta": meta, "events": meta_events, "quantity": quantity });
-  });
 }
 
-exports.people = function(req, res){
-	things(req, res, 'Person')
+exports.locations = function (req, res){
+	var meta = new event().meta(req.params.id)
+	  , location = new event().things(req.params.id, 'Location', req.query.quantity, function(t) {
+		res.render('people', {  "people": t, "events": meta.expanded, "meta": meta.info, "quantity": req.query.quantity });
+	});
 }
 
-exports.orgs = function(req, res){
-	things(req, res, 'Organisation')
+exports.reaction = function (req, res) {
+	var meta = new event().meta(req.params.id)
+	  , reaction = new event().expand(meta.info.reaction);
+	res.render('reaction', { "events": meta.expanded, "meta": meta.info, "documents": reaction })
 }
 
-exports.locations = function(req, res){
-	things(req, res, 'Location')
-}
-
-exports.timeline = function(req, res){
-	var meta = JSON.parse(fs.readFileSync('db/meta/' + req.params.id + '.json'));
-	res.render('timeline', { "title": "Timeline", "meta": meta });
-}
-
-exports.analysis = function(req, res){
-	var meta = JSON.parse(fs.readFileSync('db/meta/' + req.params.id + '.json'));
-  	var meta_events = expand_meta_events(meta);	
-	var docs = meta.analysis.map(function(collection) {
-		var docs = {};
-		docs[collection.title] = collection.documents.map(function(path) { 
-			return JSON.parse(fs.readFileSync('db/world/newtown-shooting/' + path));
-		});
-		return docs;
-	})
-	res.render('analysis', { "title": "Analysis", "meta": meta, "documents": docs, "events": meta_events });
-}
-
-exports.reaction = function(req, res){
-	var meta = JSON.parse(fs.readFileSync('db/meta/' + req.params.id + '.json'));
-  	var meta_events = expand_meta_events(meta);	
-	var docs = meta.reaction.map(function(path){
-		return JSON.parse(fs.readFileSync('db/world/newtown-shooting/' + path));
-	})
-	res.render('reaction', { "title": "Reaction", "meta": meta, "documents": docs, "events": meta_events });
-}
-
-exports.latest = function(req, res){
-	var meta = JSON.parse(fs.readFileSync('db/meta/' + req.params.id + '.json'));
-  	var meta_events = expand_meta_events(meta);	
-	var docs = meta.documents.map(function(path){
-		return JSON.parse(fs.readFileSync('db/world/newtown-shooting/' + path + '.json'));
-	})
-	res.render('latest', { "title": "Latest", "meta": meta, "documents": docs, "events": meta_events });
+exports.latest = function (req, res) {
+	var meta = new event().meta(req.params.id)
+	  , latest = new event().expand(meta.info.documents);
+	res.render('latest', { "events": meta.expanded, "meta": meta.info, "documents": latest })
 }
 
 exports.background = function (req, res) {
 	var meta = new event().meta(req.params.id);
-	res.render('background', { "title": "Background", "events": meta.expanded, "meta": meta.info });
+	res.render('background', { "events": meta.expanded, "meta": meta.info });
 }
 
 exports.pictures = function(req, res){
-  
-  var finder = require('findit').find("db/")
-    , results = []
-    , meta = JSON.parse(fs.readFileSync('db/meta/' + req.params.id + '.json'))
-    , meta_events = expand_meta_events(meta);	
-
-  finder.on('file', function (file, stat) {
-	var article = JSON.parse(fs.readFileSync(file))
-	var isPicture = article.contentApi.tags.some(function(tag) {
-		return (tag.id === 'type/gallery') // eyewitness is 'type/picture'
+	var meta = new event().meta(req.params.id)
+	  , pics = new event().pictures(req.params.id, function(p) {
+		res.render('pictures', { "results": p, "events": meta.expanded, "meta": meta.info });
 	});
-	if (isPicture) results.push(article)
-  });
-  
-  finder.on('end', function () {
-
-	// sort by latest
-	var sorted = results.sort(function(a, b){
-		return new Date(a.contentApi.webPublicationDate) < new Date(b.contentApi.webPublicationDate) ? 1 : -1;   
-	})
-
-	res.render('pictures', { "title": "Pictures", "results": sorted, "meta": meta, "events": meta_events });
-  });
-
 };
+
+exports.analysis = function (req, res) {
+	var meta = new event().meta(req.params.id)
+	  , analysis = new event().analysis(meta.info.analysis)
+	res.render('analysis', { "events": meta.expanded, "meta": meta.info, "documents": analysis })
+}
+
+

@@ -31,7 +31,6 @@ app.configure('development', function(){
 });
 
 app.get('/', events.readme);
-app.get('/events', events.list);
 app.get('/events/:id/background', events.background);
 app.get('/events/:id/latest', events.latest);
 app.get('/events/:id/analysis', events.analysis);
@@ -41,8 +40,6 @@ app.get('/events/:id/people', events.people);
 app.get('/events/:id/organisations', events.orgs);
 app.get('/events/:id/places', events.locations);
 app.get('/events/:id/reaction', events.reaction);
-app.get('/events/:id/timeline', events.timeline); // really a list of significant sub events ?
-app.get('/events/:id', events.get);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

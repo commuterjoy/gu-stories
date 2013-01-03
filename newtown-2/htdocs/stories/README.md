@@ -24,11 +24,13 @@ body { margin: 0 auto; max-width: 640px; padding: 3em; line-height: 150%; }
 
 <ul>
 
+ 
+ <li> <s>Represent minor updates to the story.</s> See <a href="/events/Newtown_Shootings/latest">latest feed</a>. The idea here is if you've come
+	back to the story after a week you can quickly tell if anything much has happened. News for people with a surface-level interest. 
+ 
  <li> Representing 'Live' running commentary.
  
- <li> Represent minor updates to the story.
- 
- <li> Interlinking external events (Eg. Arizon cinema massacre, President Obama's second term, US Healthcare system's mental health).
+ <li> Interlinking external events (Eg. Arizona cinema massacre, President Obama's second term, US Healthcare system's mental health).
 
  <li> I've started to merge article (Eg, pictures) in to a single articles. I need to do more of this with the news reports. 
 
@@ -36,7 +38,9 @@ body { margin: 0 auto; max-width: 640px; padding: 3em; line-height: 150%; }
 
  <li> Personalisation layer sits on top (Eg. regular visitor, first time visitor, skim reading)
 
- <li> Analysis can be cut lots of ways (Eg. politically - left/right, pro/anti gun control, us perspective)
+ <li> Analysis can be cut lots of ways (Eg. politically left/right, pro/anti gun control, USA/Europe perspective)
+
+ <li> Reactions are interesting - lots of first-hand and/or eyewitness reactions are embedded in to our new reports. What would happen if we broke these out?</li>
 
  <li> Where do comments sit? Do people comment on articles? Or events? Both? This would create an opportunity to comment on the events in general.
 

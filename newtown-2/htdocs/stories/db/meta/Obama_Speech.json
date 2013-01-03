@@ -1,9 +1,9 @@
 {
   "id" : "Obama_Speech",
   "documents" : [
-    "world/2012/dec/14/obama-meaningful-action-newtown-shooting",
-    "world/video/2012/dec/15/connecticut-shooting-barack-obama-wipes-away-tears-as-he-vows-meaningful-action-video",
-    "world/2012/dec/14/obama-statement-shooting-newtown-connecticut-text"
+    "world/2012/dec/14/obama-meaningful-action-newtown-shooting.json",
+    "world/video/2012/dec/15/connecticut-shooting-barack-obama-wipes-away-tears-as-he-vows-meaningful-action-video.json",
+    "world/2012/dec/14/obama-statement-shooting-newtown-connecticut-text.json"
   ],
   "occurance" : "14 Dec 2012",
   "parent" : [
