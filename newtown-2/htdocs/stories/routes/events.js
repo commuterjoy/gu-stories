@@ -1,15 +1,12 @@
+
 var fs = require('fs')
-  , marked = require('marked');
+  , event = require('../models/events');
 
 exports.list = function(req, res){
   res.render('events', {})
 };
 
 exports.readme = function(req, res){
-  marked.setOptions({
-	gfm: true,
-	pedantic: false
-	});
   var readme = fs.readFileSync('README.md');
   res.set('Content-Type', 'text/html');
   res.send(200, readme);
@@ -117,10 +114,9 @@ exports.latest = function(req, res){
 	res.render('latest', { "title": "Latest", "meta": meta, "documents": docs, "events": meta_events });
 }
 
-exports.background = function(req, res){
-	var meta = JSON.parse(fs.readFileSync('db/meta/' + req.params.id + '.json'));
-  	var meta_events = expand_meta_events(meta);	
-	res.render('background', { "title": "Background", "meta": meta, "events": meta_events });
+exports.background = function (req, res) {
+	var meta = new event().meta(req.params.id);
+	res.render('background', { "title": "Background", "events": meta.expanded, "meta": meta.info });
 }
 
 exports.pictures = function(req, res){

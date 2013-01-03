@@ -15,7 +15,7 @@ block content
             p= p
             - if (i === 1)
               p
-                a(href="#") Read more... 
+                a(href='http://guardian.co.uk/' + bar.contentApi.id)= 'Read more... (' + bar.contentApi.fields.body.split(' ').length  + ' words)' 
             - if (bar.contentApi.mediaAssets[0] && bar.contentApi.mediaAssets[0].type == 'video')
               video(poster=bar.contentApi.mediaAssets[0].fields.stillImageUrl, controls)
                 source(src=bar.contentApi.mediaAssets[0].file)

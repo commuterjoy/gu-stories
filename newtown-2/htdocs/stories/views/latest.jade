@@ -2,13 +2,17 @@ extends layout
 
 block content
   article
+    - if (meta.latest)
+      p.note What's been going on since you were last here.
+      each p in meta.latest
+        p= p
     each doc in documents
       h2.note= doc.contentApi.fields.headline
       each p, i in doc.sentances.slice(0,3)
         p= p
         - if (i === 2)
           p
-            a(href='http://guardian.co.uk/' + doc.contentApi.id) Read more... 
+            a(href='http://guardian.co.uk/' + doc.contentApi.id)= 'Read more... (' + doc.contentApi.fields.body.split(' ').length  + ' words)' 
       - if (doc.contentApi.mediaAssets[0] && doc.contentApi.mediaAssets[0].type == 'video')
         video(poster=doc.contentApi.mediaAssets[0].fields.stillImageUrl, controls)
           source(src=doc.contentApi.mediaAssets[0].file)
