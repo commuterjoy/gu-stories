@@ -11,5 +11,9 @@
     "less-middleware": "*",
     "marked": "*",
     "findit": "*"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
   }
 }

@@ -4,9 +4,7 @@
  */
 
 var express = require('express')
-  , routes = require('./routes')
   , events = require('./routes/events')
-  , user = require('./routes/user')
   , http = require('http')
   , path = require('path')
   , event = require('./models/events');
@@ -34,7 +32,6 @@ app.get('/', events.readme);
 app.get('/events/:id/background', events.background);
 app.get('/events/:id/latest', events.latest);
 app.get('/events/:id/analysis', events.analysis);
-app.get('/events/:id/analysis/:filter', events.analysis);
 app.get('/events/:id/pictures', events.pictures);
 app.get('/events/:id/people', events.people);
 app.get('/events/:id/organisations', events.orgs);

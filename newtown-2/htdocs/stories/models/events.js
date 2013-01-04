@@ -1,13 +1,14 @@
 
 var fs = require('fs');
 
-// 
+// ...
 function expand_meta_events (meta) {
 	return meta.events.map(function(event_id){
 		return JSON.parse(fs.readFileSync('db/meta/' + event_id + '.json'));
 	})
 }
 
+// ... 
 function Event () {
 
         // Expand the meta event configuration
@@ -65,6 +66,7 @@ function Event () {
 		  });
 	}
 
+	// Expands groups of analysis 
 	this.analysis = function (docs) {
 		return docs = docs.map(function(collection) {
 			var d = {};
